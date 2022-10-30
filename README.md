@@ -24,7 +24,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: (https://your-solution-url.com)
+- Solution URL: (https://www.frontendmentor.io/challenges/order-summary-component-QlPmajDUj/hub/order-summary-component-flexbox-sass-djUwKof9lM)
 - Live Site URL: (https://lysitheadarkknight.github.io/OrderSummary/)
 
 ## My process

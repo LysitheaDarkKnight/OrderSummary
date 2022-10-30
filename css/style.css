@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 16px;
+  background-color: rgb(224, 232, 255);
+}
+
+h1 {
+  font-size: 1.7rem;
+}
+
+h1, h4 {
+  color: #213056;
+}
+
+p {
+  line-height: 1.4;
+}
+
+p, .cancel {
+  color: hsl(224deg, 23%, 55%);
+}
+
+a {
+  font-weight: 700;
+  transition-duration: 0.5s;
+}
+
+.change, .btn {
+  color: #382ae1;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  box-shadow: 0 0.875rem 1.75rem #e4e1fb;
+  z-index: 10;
+}
+.card .desktop, .card .mobile {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  top: 0;
+}
+.card .desktop {
+  width: 100%;
+  top: 0;
+}
+.card .mobile {
+  display: none;
+}
+.card .container {
+  box-shadow: 0 0.7rem 2rem rgba(178, 200, 255, 0.45), 0 0.6rem 1rem rgba(178, 200, 255, 0.4);
+  border-radius: 20px;
+}
+.card .container .hero {
+  border-radius: 20px 20px 0 0;
+  width: 100%;
+  height: 225px;
+  object-fit: cover;
+  display: block;
+}
+.card .container .receipt {
+  background-color: hsl(0deg, 0%, 100%);
+  width: 460px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 25px;
+  border-radius: 0 0 20px 20px;
+}
+.card .container .receipt .card__plan {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: space-between;
+  padding: 25px;
+  background-color: #f8f9fe;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+.card .container .receipt .card__plan:hover {
+  box-shadow: 0 0.875rem 1.75rem #e4e1fb;
+}
+.card .container .receipt .card__plan .card__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 70px;
+}
+.card .container .receipt .card__plan .change {
+  margin-top: 10px;
+}
+.card .container .receipt .card__plan .change:hover {
+  text-decoration: none;
+  color: #766cf1;
+}
+.card .container .receipt .btn {
+  background-color: #382ae1;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 1rem 10px #e4e1fb;
+}
+.card .container .receipt .btn:hover {
+  background-color: #766cf1;
+}
+.card .container .receipt .cancel {
+  text-decoration: none;
+}
+.card .container .receipt .cancel:hover {
+  color: #213056;
+}
+
+@media (max-width: 932px) {
+  .card .desktop {
+    display: none;
+  }
+  .card .mobile {
+    display: block;
+  }
+  .card .container .hero {
+    height: 170px;
+  }
+  .card .container .receipt {
+    width: 350px;
+    padding: 35px;
+  }
+  .card .container .receipt .card__plan {
+    padding: 15px;
+  }
+  .card .container .receipt .card__plan .card__details {
+    margin-right: 40px;
+  }
+}/*# sourceMappingURL=style.css.map */

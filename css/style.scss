@@ -1,0 +1,174 @@
+@import 'functions';
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
+
+// Colors
+
+$main-color: rgba(224,232,255,255);
+$white-color:hsl(0, 0%, 100%);
+$details-color: #f8f9fe;
+$btn-color: #382ae1;
+$btn-hover-color: #766cf1;
+$heading-text-color: #213056;
+$para-text-color: hsl(224, 23%, 55%);
+$redhat: 'Red Hat Display', sans-serif;
+
+
+// Styles
+
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: $redhat;
+    font-size: 16px;
+    background-color: $main-color;
+}
+
+h1{
+    font-size: 1.7rem;
+}
+
+h1, h4{
+    color: $heading-text-color
+}
+
+p{
+    line-height: 1.4;
+}
+
+p, .cancel{
+    color: $para-text-color;
+}
+
+a{
+    font-weight: 700;
+    transition-duration: 0.5s;
+}
+
+.change, .btn{
+    color: $btn-color;
+}
+
+
+
+.card{
+    position: relative;
+    @include flex;
+    // align-items: center;
+    // justify-content: center;
+    height: 100vh;
+    box-shadow: 0 0.875rem 1.75rem #e4e1fb;
+    z-index: 10;
+    // Backgrounds
+
+    .desktop, .mobile{
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        top: 0;
+    }
+
+    .desktop{
+        width: 100%;
+        top: 0;
+    }
+
+    .mobile{
+        display: none;
+    }
+
+    .container{
+        box-shadow: 0 0.7rem 2rem rgba(178, 200, 255, 0.45), 0 0.6rem 1rem rgba(178, 200, 255, 0.4);
+        border-radius: 20px;
+        .hero{
+            border-radius: 20px 20px 0 0;
+            width: 100%;
+            height: 225px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .receipt{
+            background-color: $white-color;
+            width: 460px;
+            padding: 50px;
+            @include flex-column;
+            text-align: center;
+            gap: 25px;
+            border-radius: 0 0 20px 20px;
+            .card__plan{
+                @include flex(row, space-between, space-between);
+                padding: 25px;
+                background-color: $details-color;
+                border-radius: 10px;
+                transition: 0.5s;
+                &:hover{
+                    box-shadow: 0 0.875rem 1.75rem #e4e1fb;
+                }
+                .card__details{
+                    @include flex(column, space-between);
+                    margin-right: 70px;
+                }
+                .change{
+                    margin-top: 10px;
+                    &:hover{
+                        text-decoration: none;
+                        color: $btn-hover-color;
+                    }
+                }
+            }
+
+            .btn{
+                @include set-background($btn-color);
+                text-decoration: none;
+                padding: 10px;
+                border-radius: 10px;
+                box-shadow: 0 1rem 10px #e4e1fb;
+                &:hover{
+                    background-color: $btn-hover-color;
+                }
+            }
+
+            .cancel{
+                text-decoration: none;
+                &:hover{
+                    color: $heading-text-color;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 932px){
+    .card{
+        .desktop{
+            display: none;
+        }
+    
+        .mobile{
+            display: block;
+        }
+    
+        .container{
+            .hero{
+                height: 170px;
+            }
+    
+            .receipt{
+                width: 350px;
+                padding: 35px;
+                .card__plan{
+                    padding: 15px;
+
+                    .card__details{
+                        margin-right: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
